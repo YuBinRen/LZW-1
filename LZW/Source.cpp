@@ -113,9 +113,10 @@ public:
 		return index;
 	}
 	void takesort(std::string offset);
-	void call() { std::cout << str << std::endl; };
+	//void call() { std::cout << str << std::endl; };
 	void call_sortoffset();
 	string PassKey(){return key; }
+	string PassStr() { return str; }
 };
 
 
@@ -171,14 +172,27 @@ int main()
 {
 
 
-	std::string data("ababbabaa");
+	std::string data("ababbbababba");
 	blocksort step1(data);//dataをコンストラクタにpass
 	step1.takesort(step1.PatrolStr());
 	step1.call_sortoffset();
 
 
 	string s = step1.PassKey();
+	cout << "Apply_Blocksort" << endl;
 	vector<int> output_code = encoding(s);
+	cout << "Output Codes are: ";
+	for (int i = 0; i < output_code.size(); i++) {
+		cout << output_code[i] << " ";
+	}
+	cout << endl;
+
+	decoding(output_code);
+
+	cout << endl<<endl;
+	s = step1.PassStr();
+	cout << "Not_Appy_Blocksort" << endl;
+	output_code = encoding(s);
 	cout << "Output Codes are: ";
 	for (int i = 0; i < output_code.size(); i++) {
 		cout << output_code[i] << " ";
