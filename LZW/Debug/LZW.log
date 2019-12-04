@@ -1,0 +1,7 @@
+﻿  Source.cpp
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(32): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(76): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(151): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(155): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(183): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+  LZW.vcxproj -> C:\Users\ht17a031\Desktop\LZW\Debug\LZW.exe
