@@ -1,8 +1,9 @@
 ﻿  Source.cpp
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(32): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(76): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(152): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(156): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(185): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
-c:\users\ht17a031\desktop\lzw\lzw\source.cpp(197): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(13): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(63): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(107): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(183): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(187): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(223): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
+c:\users\ht17a031\desktop\lzw\lzw\source.cpp(235): warning C4018: '<': signed と unsigned の数値を比較しようとしました。
   LZW.vcxproj -> C:\Users\ht17a031\Desktop\LZW\Debug\LZW.exe

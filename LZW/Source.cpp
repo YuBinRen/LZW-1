@@ -2,20 +2,51 @@
 #include <unordered_map>
 using namespace std;
 
+vector<int> serch(string str) {
+	cout << "Serch\n";
+	unordered_map<string, int>table;
+	cout << "String\tAddition\n";
+	string p = "", c = "";
+	p += str[0];
+	int code = 1;
+	vector<int> output_code;
+	for (int i = 0; i < str.length(); i++) {
+		if (i != str.length() - 1)
+			c += str[i + 1];
+		if (table.find(p + c) != table.end()) {
+			table[p + c] += 1;
+			//cout << p + c << "\t" << table[p+c] << endl;
+			p = c;
+		}
+		else {
+			//cout << p + c << "\t" << code << endl;
+			//output_code.push_back(table[p]);
+			table[p + c] = code;
+			p = c;
+		}
+		c = "";
+	}
+	for (auto i = table.begin(); i != table.end(); ++i) {
+		std::cout << i->first << " " << i->second << "\n";
+	}
 
+	//output_code.push_back(table[p]);
+	//std::array<int, 5> arr{{ 1, 3, 9, 4 }};
+	return output_code;
+}
 vector<int> encoding(string s1)
 {
 	cout << "Encoding\n";
-	/*unordered_map<string, int> table;
+	unordered_map<string, int> table;
 	for (int i = 0; i <= 255; i++) {
 		string ch = "";
 		ch += char(i);
 		table[ch] = i;
-	}*/
+	}
 
 
 	cout << "String\tOutput_Code\tAddition\n";
-	unordered_map<string, int> table;
+	/*unordered_map<string, int> table;
 	int	Initialization_count=0;
 	for (int i = 0; i < 2; i++) {
 		Initialization_count++;
@@ -23,11 +54,11 @@ vector<int> encoding(string s1)
 		ch += char(97 + i);
 		table[ch] = i;
 	cout << "\t\t\t"<<ch << "\t" << table[ch] << "\t\t"<< endl;
-	}
+	}*/
 
 	string p = "", c = "";
 	p += s1[0];
-	int code = Initialization_count;
+	int code = 256;
 	vector<int> output_code;
 	for (int i = 0; i < s1.length(); i++) {
 		if (i != s1.length() - 1)
@@ -53,26 +84,26 @@ vector<int> encoding(string s1)
 void decoding(vector<int> op)
 {
 	cout << "\nDecoding\n";
-	/*unordered_map<int, string> table;
+	unordered_map<int, string> table;
 	for (int i = 0; i <= 255; i++) {
 		string ch = "";
 		ch += char(i);
 		table[i] = ch;
-	}*/
-	unordered_map<int ,string> table;
+	}
+	/*unordered_map<int ,string> table;
 	int Initialization_count = 0;
 	for (int i = 0; i < 2; i++) {
 		Initialization_count++;
 		string ch = "";
 		ch += char(97 + i);
 		table[i] = ch;
-	}
+	}*/
 	int old = op[0],n;
 	string s = table[old];
 	string c = "";
 	c += s[0];
 	cout << s;
-	int count = Initialization_count;
+	int count = 256;
 	for (int i = 0; i < op.size() - 1; i++) {
 		n = op[i + 1];
 		if (table.find(n) == table.end()) {
@@ -167,19 +198,26 @@ void blocksort::call_sortoffset() {
 		<< key << "\t" << str <<"\t"<<findIndex(str)<< std::endl << std::endl;
 }
 
+bool greater_count(const std::pair<char, int>& x, const std::pair<char, int>& y) {
+	return x.second > y.second;
+}
 
-int main()
+int main(int argc, char* argv[])
 {
-
-
-	std::string data("ababbbababba");
-	blocksort step1(data);//dataをコンストラクタにpass
+	ifstream ifs("tst.txt");
+	if (ifs.fail()) {
+		cerr << "not_found" << endl;
+	}
+	std::istreambuf_iterator<char> it(ifs);
+	std::istreambuf_iterator<char> last;
+	std::string str(it, last);
+	blocksort step1(str);//dataをコンストラクタにpass
 	step1.takesort(step1.PatrolStr());
 	step1.call_sortoffset();
 
-
 	string s = step1.PassKey();
 	cout << "Apply_Blocksort" << endl;
+	serch(s);
 	vector<int> output_code = encoding(s);
 	cout << "Output Codes are: ";
 	for (int i = 0; i < output_code.size(); i++) {
@@ -200,4 +238,8 @@ int main()
 	cout << endl;
 
 	decoding(output_code);
+	
+	//serch(str);
+
+	return 0;
 }
